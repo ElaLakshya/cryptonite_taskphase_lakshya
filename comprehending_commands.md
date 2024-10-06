@@ -1,16 +1,16 @@
-#Comprehending Commands
+# Comprehending Commands
 
-##Flags
+## Flags
 
-###Using ```cat```
+### Using ```cat```
 
 - [x] pwn.college{0SeXsyORC14nv84w-eEsG0j0ghZ.dFzN1QDL5ITO0czW}
 
-###catting absolute paths
+### catting absolute paths
 
 - [x] pwn.college{w_GImKw0KPEZgqTlbq6ja_tOk1c.dlTM5QDL5ITO0czW}
 
-###More catting practice
+### More catting practice
 
 - [x] pwn.college{oYgG5F18PeYvve--NxuThWUvBMW.dBjM5QDL5ITO0czW}
 
