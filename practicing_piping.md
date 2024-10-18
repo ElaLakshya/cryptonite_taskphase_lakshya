@@ -224,3 +224,30 @@ Processing...
 Correct! Passing secret value to /challenge/college...
 Great job! Here is your flag:
 pwn.college{wbC2VkWFeYWfTFSHoBvHLZ_kOpv.dFjM5QDL5ITO0czW}
+
+
+### Writing to multiple programs
+
+- [x] pwn.college{QdC8Pgzr_re2J8pi9L1ERNqNS29.dBDO0UDL5ITO0czW}
+
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) >(/challenge/planet)
+
+This secret data must directly and simultaneously make it to /challenge/the and
+/challenge/planet. Don't try to copy-paste it; it changes too fast.
+4461497063053417
+
+Congratulations, you have duplicated data into the input of two programs! Here
+is your flag:
+
+pwn.college{QdC8Pgzr_re2J8pi9L1ERNqNS29.dBDO0UDL5ITO0czW}
+
+### Split-piping stderr and stdout
+
+- [x] pwn.college{cg1wuCgnrLjhcjedlrSYpuuNPrw.dFDNwYDL5ITO0czW}
+
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack > >(/challenge/planet) 2> >(/challenge/the)
+
+Congratulations, you have learned a redirection technique that even experts
+struggle with! Here is your flag:
+
+pwn.college{cg1wuCgnrLjhcjedlrSYpuuNPrw.dFDNwYDL5ITO0czW}
