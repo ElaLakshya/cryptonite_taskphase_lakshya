@@ -32,12 +32,18 @@ pwn.college{ob68qcTi00apYyoVa6DB9Nqsy_3.dVzNyUDL5ITO0czW}
 
 hacker@path~adding-commands:~$ touch win
 hacker@path~adding-commands:~$ nano win
+
+The command in nano  was
+
+"read flag < /flag
+echo $flag"
+
 hacker@path~adding-commands:~$ chmod ugo=rwx win
 hacker@path~adding-commands:~$ PATH=~
 hacker@path~adding-commands:~$ /challenge/run
 Invoking 'win'....
 pwn.college{YBIoXenZ-nOIpBTbE7WAODhrn_-.dZzNyUDL5ITO0czW}
- 
+
 ### 4. Hijacking Commands
 
 - [x] pwn.college{4moYsf_m_7MHM0ueJcztddfGt95.ddzNyUDL5ITO0czW}
@@ -52,5 +58,9 @@ pwn.college{4moYsf_m_7MHM0ueJcztddfGt95.ddzNyUDL5ITO0czW}
 
 In this puzzle we changed the rm command itself! We switched the path of rm to the same as our path command which reads out our flag.
 
+The command used was 
+
+"read flag < /flag
+echo $flag"
 ```
 
