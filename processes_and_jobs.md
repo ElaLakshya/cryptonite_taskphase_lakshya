@@ -2,7 +2,7 @@
 
 ## Flags
 
-### Listing Processes
+### 1. Listing Processes
 
 - [x] pwn.college{4a3W90exrJDhudSQk0Zc5EQSBTI.dhzM4QDL5ITO0czW}
 
@@ -30,7 +30,7 @@ pwn.college{4a3W90exrJDhudSQk0Zc5EQSBTI.dhzM4QDL5ITO0czW}
 
 Now I will sleep for a while (so that you could find me with 'ps').
 
-### Killing Processes
+### 2. Killing Processes
 
 - [x] pwn.college{waRKMw5qZ8yXCE3lepeGhTGFh6q.dJDN4QDL5ITO0czW}
 
@@ -62,7 +62,7 @@ Great job! Here is your payment:
 
 pwn.college{waRKMw5qZ8yXCE3lepeGhTGFh6q.dJDN4QDL5ITO0czW}
 
-### Interrupting Processes
+### 3. Interrupting Processes
 
 - [x] pwn.college{sXCx8xTO5cIfYmjg6mQ-WyZYp4P.dNDN4QDL5ITO0czW}
 
@@ -78,7 +78,7 @@ Good job! You have used Ctrl-C to interrupt this process! Here is your flag:
 
 pwn.college{sXCx8xTO5cIfYmjg6mQ-WyZYp4P.dNDN4QDL5ITO0czW}
 
-### Suspending Processes
+### 4. Suspending Processes
 
 - [x] pwn.college{YPDCV-b_O3uiin0b-QduvQalHRk.dVDN4QDL5ITO0czW}
 
@@ -116,7 +116,7 @@ Yay, I found another version of me! Here is the flag:
 
 pwn.college{YPDCV-b_O3uiin0b-QduvQalHRk.dVDN4QDL5ITO0czW}
 
-### Resuming Processes
+### 5. Resuming Processes
 
 - [x] pwn.college{Y68lEY6Vwk9y_p20YpMYjMRWxeG.dZDN4QDL5ITO0czW}
 
@@ -142,8 +142,120 @@ Goodbye!
 
 #### Ctrl+c for stopping, Ctrl+z for pausing, fg for resuming
 
-### Backgrounding Processes
+### 6. Backgrounding Processes
 
-- [x] 
+- [x] pwn.college{ggE-3hNXhQlLlvPoyOu6Ek69vji.ddDN4QDL5ITO0czW}
 
+hacker@processes~backgrounding-processes:~$ /challenge/run
+
+I'll only give you the flag if there's already another copy of me running *and not suspended* in this terminal... Let's check!
+
+UID          PID STAT CMD
+
+root          82 S+   bash /challenge/run
+
+root          84 R+   ps -o user=UID,pid,stat,cmd
+
+I don't see a second me!
+
+To pass this level, you need to suspend me, resume the suspended process in the background, and then launch a new version of me! You can background me with Ctrl-Z (and resume me in the background with 'bg') or, if you're not ready to do that for whatever reason, just hit Enter and I'll exit!
+
+^Z
+
+[1]+  Stopped                 /challenge/run
+
+hacker@processes~backgrounding-processes:~$ bg
+
+[1]+ /challenge/run &
+
+
+
+Yay, I'm now running the background! Because of that, this text will probably overlap weirdly with the shell prompt. Don't panic; just hit Enter a few times to scroll this text out.
+
+hacker@processes~backgrounding-processes:~$ /challenge/run
+
+I'll only give you the flag if there's already another copy of me running *and not suspended* in this terminal... Let's check!
+
+UID          PID STAT CMD
+
+root          82 S    bash /challenge/run
+
+root          92 S    sleep 6h
+
+root          93 S+   bash /challenge/run
+
+root          95 R+   ps -o user=UID,pid,stat,cmd
+
+Yay, I found another version of me running in the background! Here is the flag:
+
+pwn.college{ggE-3hNXhQlLlvPoyOu6Ek69vji.ddDN4QDL5ITO0czW} 
+
+#### We were taught about the difference between fg and bg command
+
+### 7. Foregrounding Processes
+
+- [x] pwn.college{MnNH5xbaHFac-XlmjayM0TH3Sgy.dhDN4QDL5ITO0czW}
+
+hacker@processes~foregrounding-processes:~$ /challenge/run
+
+To pass this level, you need to suspend me, resume the suspended process in the background, and *then* foreground it without re-suspending it! You can background me with Ctrl-Z (and resume me in the background with 'bg') or, if you're not ready to do that for whatever reason, just hit Enter and I'll exit!
+
+^Z
+
+[1]+  Stopped                 /challenge/run
+
+hacker@processes~foregrounding-processes:~$ bg
+
+[1]+ /challenge/run &
+
+
+
+Yay, I'm now running the background! Because of that, this text will probably overlap weirdly with the shell prompt. Don't panic; just hit Enter a few times to scroll this text out. After that, resume me into the foreground with 'fg';
+
+I'll wait.
+
+hacker@processes~foregrounding-processes:~$ fg
+
+/challenge/run
+
+YES! Great job! I'm now running in the foreground. Hit Enter for your flag!
+
+pwn.college{MnNH5xbaHFac-XlmjayM0TH3Sgy.dhDN4QDL5ITO0czW}
+
+### 8. Starting Backgrounded Processes
+
+- [x] pwn.college{kyuzLK1BZ3R53Zhlx5Md3Tm7ULf.dlDN4QDL5ITO0czW}
+
+hacker@processes~starting-backgrounded-processes:~$ /challenge/run &
+
+[1] 82
+
+hacker@processes~starting-backgrounded-processes:~$
+
+
+Yay, you started me in the background! Because of that, this text will probably overlap weirdly with the shell prompt, but you're used to that by now...
+
+Anyways! Here is your flag!
+
+pwn.college{kyuzLK1BZ3R53Zhlx5Md3Tm7ULf.dlDN4QDL5ITO0czW}
+
+[1]+  Done                    /challenge/run
+
+### 9. Process Exit Codes
+
+- [x] pwn.college{Y4ah5yPOJGOhSwlNghX2JPZDlxD.dljN4UDL5ITO0czW}
+
+hacker@processes~process-exit-codes:~$ /challenge/get-code
+
+Exiting with an error code!
+
+hacker@processes~process-exit-codes:~$ echo $?
+
+187
+
+hacker@processes~process-exit-codes:~$ /challenge/submit-code 187
+
+CORRECT! Here is your flag:
+
+pwn.college{Y4ah5yPOJGOhSwlNghX2JPZDlxD.dljN4UDL5ITO0czW}
 
