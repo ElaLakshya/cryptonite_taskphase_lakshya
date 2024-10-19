@@ -334,6 +334,8 @@ hacker@permissions~permissions-setting-practice:~$ chmod ugo+r /flag
 hacker@permissions~permissions-setting-practice:~$ cat /flag
 pwn.college{UghtHhSnUEPJP9jJ_Wdo4tsafCh.dNTM5QDL5ITO0czW}```
 
+
+
 ### The SUID Bit
 
 - [x] pwn.college{EEJL3A1zxnhj7Ajkd8h7YsE0ENh.dNTM2QDL5ITO0czW}
